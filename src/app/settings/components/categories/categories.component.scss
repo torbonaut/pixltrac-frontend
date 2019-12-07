@@ -1,0 +1,21 @@
+span.icon-category {
+  background-image: url(/assets/svg/liste.svg);
+}
+
+mat-expansion-panel {
+  p {
+    font-size: 12px;
+    margin: 0 0 0.5em 0;
+
+    .dailyQueries {
+      float: right;
+      font-weight: bold;
+      margin: 0 0 0.5em 0.5em;
+    }
+  }
+
+  button {
+    float: right;
+  }
+
+}

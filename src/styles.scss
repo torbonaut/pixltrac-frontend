@@ -2,3 +2,16 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+span.svg-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url(/assets/svg/frame-landschaft.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+  // Icon made by Freepik from www.flaticon.com

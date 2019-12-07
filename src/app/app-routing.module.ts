@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {ScreenDashboardComponent} from './dashboard/screens/screen-dashboard/screen-dashboard.component';
 import {ScreenSettingsComponent} from './settings/screens/screen-settings/screen-settings.component';
+import {ScreenEditCategoryComponent} from './settings/screens/screen-edit-category/screen-edit-category.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'settings',
     component: ScreenSettingsComponent
+  },
+  {
+    path: 'settings/screen-edit-category/:id',
+    component: ScreenEditCategoryComponent
   },
   {
     path: '',

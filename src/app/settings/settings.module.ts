@@ -1,16 +1,38 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ScreenSettingsComponent } from './screens/screen-settings/screen-settings.component';
+import { ColorSchemeChooserComponent } from './components/color-scheme-chooser/color-scheme-chooser.component';
+import {MatButtonModule, MatCardModule, MatDividerModule, MatExpansionModule, MatIconModule, MatSelectModule} from '@angular/material';
+import {NgxsModule} from '@ngxs/store';
+import {SettingsState} from './state/settings.state';
+import {ColorPalettesService} from './services/color-palettes.service';
+import { CategoriesComponent } from './components/categories/categories.component';
+import {CategoriesService} from './services/categories.service';
+import {ScreenEditCategoryComponent} from './screens/screen-edit-category/screen-edit-category.component';
+import {RouterModule} from '@angular/router';
 
 
 
 @NgModule({
-  declarations: [ScreenSettingsComponent],
+  declarations: [ScreenSettingsComponent, ColorSchemeChooserComponent, CategoriesComponent, ScreenEditCategoryComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule,
+    MatSelectModule,
+    MatIconModule,
+    MatExpansionModule,
+    MatButtonModule,
+    MatDividerModule,
+    NgxsModule.forFeature([SettingsState]),
+    RouterModule
   ],
   exports: [
-    ScreenSettingsComponent
+    ScreenSettingsComponent,
+    ScreenEditCategoryComponent
+  ],
+  providers: [
+    ColorPalettesService,
+    CategoriesService
   ]
 })
 export class SettingsModule { }

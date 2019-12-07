@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-title>
+    <span class="svg-icon icon-category"></span>
+    <span>Kategorien</span>
+  </mat-card-title>
+  <mat-card-subtitle>Die Möglichkeit ist die schwerste aller Kategorien.</mat-card-subtitle>
+  <mat-card-content>
+    <mat-accordion *ngIf="(categories$ | async) as categories; else noCategories">
+      <mat-expansion-panel *ngFor="let category of categories">
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{ category.title }}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p><span class="dailyQueries">{{ category.dailyQueries }}&times; tägl.</span>{{ category.description }}</p>
+        <mat-divider [inset]="true"></mat-divider>
+        <button [routerLink]="['/settings/screen-edit-category/' + category.id]" mat-button>Kategorie bearbeiten</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </mat-card-content>
+</mat-card>
+
+<ng-template #noCategories>
+  Keine Kategorien vorhanden bzw. konnten diese nicht geladen werden.
+</ng-template>
