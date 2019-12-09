@@ -1,9 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {Select, Store} from '@ngxs/store';
 import {SettingsState} from '../../state/settings.state';
 import {Observable} from 'rxjs';
 import {DefaultColorPalette, IColorPalette} from '../../models/settings.model';
 import {ActionSettingsSetActiveColorPalette} from '../../state/settings.actions';
+import {ColorPalettesUtility} from '../../util/color-palettes.util';
 
 @Component({
   selector: 'pt-color-scheme-chooser',
@@ -19,6 +20,8 @@ export class ColorSchemeChooserComponent implements OnInit {
 
   defaultColorPalette = DefaultColorPalette;
 
+  utility = ColorPalettesUtility;
+
   constructor(
     private store: Store
   ) { }
@@ -28,6 +31,10 @@ export class ColorSchemeChooserComponent implements OnInit {
 
   selectColorPalette(selectedColorPalette: IColorPalette) {
     this.store.dispatch(new ActionSettingsSetActiveColorPalette(selectedColorPalette));
+  }
+
+  compareOptions(i1: IColorPalette, i2: IColorPalette) {
+    return i1 && i2 ? i1.id === i2.id : i1 === i2;
   }
 
 }

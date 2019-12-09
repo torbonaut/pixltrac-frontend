@@ -6,16 +6,11 @@ mat-expansion-panel {
   p {
     font-size: 12px;
     margin: 0 0 0.5em 0;
-
-    .dailyQueries {
-      float: right;
-      font-weight: bold;
-      margin: 0 0 0.5em 0.5em;
-    }
   }
 
-  button {
-    float: right;
+  a {
+    float: left;
+    margin: 0 1em 0.5em 0;
   }
 
 }

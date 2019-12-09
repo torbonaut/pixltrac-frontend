@@ -8,7 +8,8 @@
     <ng-container *ngIf="(colorPalettes$ | async) as colorPalettes; else noPalettesTemplate">
       <mat-form-field>
         <mat-label>Farbschema auswählen</mat-label>
-        <mat-select (valueChange)="selectColorPalette($event)">
+        <mat-select [value]="activeColorPalette$ | async" [compareWith]="compareOptions"  (valueChange)="selectColorPalette($event)">
+          <mat-option [value]="defaultColorPalette">{{ defaultColorPalette.title }}</mat-option>
           <mat-option [value]="palette" *ngFor="let palette of colorPalettes">{{ palette.title }}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -16,9 +17,8 @@
   </mat-card-content>
   <mat-card-footer *ngIf="(activeColorPalette$ | async) as activeColorPalette; else defaultPaletteTemplate">
     <div class="container">
-      <span *ngFor="let color of activeColorPalette.colors" [ngStyle]="{ backgroundColor: color }"></span>
+      <span *ngFor="let color of utility.getColors(activeColorPalette.colors)" [ngStyle]="{ backgroundColor: color }"></span>
     </div>
-    <p>Ausgewählt: <strong>{{ activeColorPalette.title}}</strong></p>
   </mat-card-footer>
 </mat-card>
 
@@ -29,8 +29,7 @@
 <ng-template #defaultPaletteTemplate>
   <mat-card-footer>
     <div class="container">
-      <span *ngFor="let color of defaultColorPalette.colors" [ngStyle]="{ backgroundColor: color }"></span>
+      <span *ngFor="let color of utility.getColors(defaultColorPalette.colors)" [ngStyle]="{ backgroundColor: color }"></span>
     </div>
-    <p>Ausgewählt: <strong>{{ defaultColorPalette.title}}</strong></p>
   </mat-card-footer>
 </ng-template>

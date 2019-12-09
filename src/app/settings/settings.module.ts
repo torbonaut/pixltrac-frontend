@@ -10,6 +10,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import {CategoriesService} from './services/categories.service';
 import {ScreenEditCategoryComponent} from './screens/screen-edit-category/screen-edit-category.component';
 import {RouterModule} from '@angular/router';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -24,7 +25,8 @@ import {RouterModule} from '@angular/router';
     MatButtonModule,
     MatDividerModule,
     NgxsModule.forFeature([SettingsState]),
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     ScreenSettingsComponent,
