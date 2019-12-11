@@ -5,6 +5,7 @@ import { LayoutHeaderComponent } from './components/ui/layout-header/layout-head
 import { LayoutMainComponent } from './components/ui/layout-main/layout-main.component';
 import {MatIconModule, MatToolbarModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 
@@ -19,7 +20,8 @@ import {RouterModule} from '@angular/router';
     CommonModule,
     MatToolbarModule,
     MatIconModule,
-    RouterModule
+    RouterModule,
+    TranslateModule
   ]
 })
 export class SharedModule { }

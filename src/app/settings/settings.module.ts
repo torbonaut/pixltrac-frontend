@@ -11,11 +11,12 @@ import {CategoriesService} from './services/categories.service';
 import {ScreenEditCategoryComponent} from './screens/screen-edit-category/screen-edit-category.component';
 import {RouterModule} from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
+import { LanguageComponent } from './components/language/language.component';
 
 
 
 @NgModule({
-  declarations: [ScreenSettingsComponent, ColorSchemeChooserComponent, CategoriesComponent, ScreenEditCategoryComponent],
+  declarations: [ScreenSettingsComponent, ColorSchemeChooserComponent, CategoriesComponent, ScreenEditCategoryComponent, LanguageComponent],
   imports: [
     CommonModule,
     MatCardModule,
@@ -24,6 +25,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatExpansionModule,
     MatButtonModule,
     MatDividerModule,
+    MatSelectModule,
     NgxsModule.forFeature([SettingsState]),
     RouterModule,
     ReactiveFormsModule

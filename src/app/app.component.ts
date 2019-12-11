@@ -9,8 +9,11 @@ import {TranslateService} from '@ngx-translate/core';
 export class AppComponent {
   title = 'pixtrac-frontend';
 
-  constructor(private translateService: TranslateService) {
+  constructor(
+    private translateService: TranslateService
+  ) {
     translateService.setDefaultLang('en');
     translateService.use('de');
+
   }
 }

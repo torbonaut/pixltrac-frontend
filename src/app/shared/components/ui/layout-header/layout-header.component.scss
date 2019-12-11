@@ -1,3 +1,14 @@
-.spacer {
-  flex: 1 1 auto;
+
+
+
+mat-toolbar {
+  justify-content: space-between;
+
+  a {
+    color: white;
+  }
+
+  div.logo, div.links {
+    width: 32px;
+  }
 }

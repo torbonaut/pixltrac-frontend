@@ -1,3 +1,9 @@
 {
-  "APP_TITLE": "pixlTrac"
+  "APP_TITLE": "pixlTrac",
+  "ROUTES": {
+    "BACK": "Back",
+    "DASHBOARD": "Dashboard",
+    "SETTINGS": "Settings",
+    "EDIT_CATEGORY": "Edit Category"
+  }
 }

@@ -1,7 +1,17 @@
-<mat-toolbar color="primary">
-  <span>pixlTrac</span>
-  <span class="spacer"></span>
-  <a [routerLink]="['settings']">
-    <mat-icon>apps</mat-icon>
-  </a>
+<mat-toolbar color="primary" *ngIf="data$ | async as data">
+    <div class="links">
+      <a *ngIf="data.backLinkOrSettings === true" class="back-link" (click)="location.back()">
+        <mat-icon>keyboard_backspace</mat-icon>
+      </a>
+      <a *ngIf="data.backLinkOrSettings === false" class="settings-link" [routerLink]="['settings']">
+        <mat-icon>apps</mat-icon>
+      </a>
+    </div>
+    <div class="title">
+
+      <span>{{ data.title | translate }}</span>
+    </div>
+    <div class="logo">
+      <img alt="pixlTrac" src="/assets/images/pixltrac-logo-32x32.png" />
+    </div>
 </mat-toolbar>
