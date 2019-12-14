@@ -5,5 +5,33 @@
     "DASHBOARD": "pixlTrac Übersicht",
     "SETTINGS": "Einstellungen",
     "EDIT_CATEGORY": "Kategorie bearbeiten"
+  },
+  "SETTINGS": {
+    "TITLE": "Einstellungen",
+    "COLOR_PALETTE": {
+      "TITLE": "Farbschema",
+      "QUOTE": "Das Licht leitet, die Farben füllen.",
+      "CHOOSE": "Farbschema auswählen",
+      "EMPTY": "Es konnten keine Paletten gefunden bzw. geladen werden. Die Standardfarben werden verwendet."
+    },
+    "CATEGORIES": {
+      "TITLE": "Kategorien",
+      "QUOTE": "Die Möglichkeit ist die schwerste aller Kategorien.",
+      "EMPTY": "Keine Kategorien vorhanden bzw. konnten diese nicht geladen werden."
+    },
+    "EDIT_CATEGORY": {
+      "TITLE": "Kategorie bearbeiten",
+      "LABEL_TITLE": "Titel",
+      "LABEL_DESCRIPTION": "Beschreibung",
+      "LABEL_ACTIVE": "aktiv",
+      "BUTTON_DELETE": "Kategorie löschen"
+    },
+    "LANGUAGE": {
+      "TITLE": "Sprache",
+      "QUOTE": "Die ganze Kunst der Sprache besteht darin, verstanden zu werden.",
+      "CHOOSE": "Sprache auswählen",
+      "ENGLISH": "Englisch",
+      "GERMAN": "Deutsch"
+    }
   }
 }

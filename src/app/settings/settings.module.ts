@@ -21,6 +21,7 @@ import {RouterModule} from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
 import { LanguageComponent } from './components/language/language.component';
 import { EditCategoryComponent } from './components/edit-category/edit-category.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { EditCategoryComponent } from './components/edit-category/edit-category.
     NgxsModule.forFeature([SettingsState]),
     RouterModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    TranslateModule
   ],
   exports: [
     ScreenSettingsComponent,

@@ -4,7 +4,7 @@ import {
   ActionSettingsLoadCategories,
   ActionSettingsLoadColorPalettes,
   ActionSettingsNewCategory,
-  ActionSettingsSetActiveColorPalette, ActionSettingsUpdateCategory
+  ActionSettingsSetActiveColorPalette, ActionSettingsSetLanguage, ActionSettingsUpdateCategory
 } from './settings.actions';
 import {ColorPalettesService} from '../services/color-palettes.service';
 import {catchError, tap} from 'rxjs/operators';
@@ -53,6 +53,11 @@ export class SettingsState implements NgxsOnInit {
     return state.lastCategoryId;
   }
 
+  @Selector()
+  static language(state: ISettingsStateModel) {
+    return state.language;
+  }
+
   sortFunction = (a: ICategory, b: ICategory) => a.title.localeCompare(b.title);
 
   constructor(
@@ -63,7 +68,7 @@ export class SettingsState implements NgxsOnInit {
 
   ngxsOnInit(ctx?: StateContext<ISettingsStateModel>): void {
     this.store.dispatch(ActionSettingsLoadColorPalettes);
-    this.store.dispatch(ActionSettingsLoadCategories);
+    // this.store.dispatch(ActionSettingsLoadCategories);
   }
 
   @Action(ActionSettingsLoadColorPalettes)
@@ -146,5 +151,10 @@ export class SettingsState implements NgxsOnInit {
       .sort(this.sortFunction);
 
     ctx.patchState({ categories });
+  }
+
+  @Action(ActionSettingsSetLanguage)
+  setLanguage(ctx: StateContext<ISettingsStateModel>, action: ActionSettingsSetLanguage) {
+    ctx.patchState( { language: action.language });
   }
 }

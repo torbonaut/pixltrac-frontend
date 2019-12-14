@@ -1,9 +1,9 @@
 <mat-card>
   <mat-card-title>
     <span class="svg-icon icon-category"></span>
-    <span>Kategorien</span>
+    <span translate>SETTINGS.CATEGORIES.TITLE</span>
   </mat-card-title>
-  <mat-card-subtitle>Die Möglichkeit ist die schwerste aller Kategorien.</mat-card-subtitle>
+  <mat-card-subtitle translate>SETTINGS.CATEGORIES.QUOTE</mat-card-subtitle>
   <mat-card-content>
     <button mat-mini-fab (click)="newCategory()">+</button>
     <mat-accordion *ngIf="(categories$ | async) as categories; else noCategories">
@@ -18,6 +18,4 @@
   </mat-card-content>
 </mat-card>
 
-<ng-template #noCategories>
-  Keine Kategorien vorhanden bzw. konnten diese nicht geladen werden.
-</ng-template>
+<ng-template #noCategories translate>SETTINGS.CATEGORIES.EMPTY</ng-template>

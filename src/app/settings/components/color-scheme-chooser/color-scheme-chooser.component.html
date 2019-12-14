@@ -1,13 +1,13 @@
 <mat-card>
   <mat-card-title>
     <span class="svg-icon icon-palette"></span>
-    <span>Farbschema</span>
+    <span translate>SETTINGS.COLOR_PALETTE.TITLE</span>
   </mat-card-title>
-  <mat-card-subtitle>Das Licht leitet, die Farben füllen.</mat-card-subtitle>
+  <mat-card-subtitle translate>SETTINGS.COLOR_PALETTE.QUOTE</mat-card-subtitle>
   <mat-card-content>
     <ng-container *ngIf="(colorPalettes$ | async) as colorPalettes; else noPalettesTemplate">
       <mat-form-field>
-        <mat-label>Farbschema auswählen</mat-label>
+        <mat-label translate>SETTINGS.COLOR_PALETTE.CHOOSE</mat-label>
         <mat-select [value]="activeColorPalette$ | async" [compareWith]="compareOptions"  (valueChange)="selectColorPalette($event)">
           <mat-option [value]="defaultColorPalette">{{ defaultColorPalette.title }}</mat-option>
           <mat-option [value]="palette" *ngFor="let palette of colorPalettes">{{ palette.title }}</mat-option>
@@ -23,7 +23,7 @@
 </mat-card>
 
 <ng-template #noPalettesTemplate>
-  Es konnten keine Paletten gefunden bzw. geladen werden. Die Standardfarben werden verwendet.
+  {{ "SETTINGS.COLOR_PALETTE.EMPTY" | translate }}
 </ng-template>
 
 <ng-template #defaultPaletteTemplate>

@@ -17,3 +17,5 @@ export interface ICategory {
   activated: boolean;
   created: Date;
 }
+
+export type TLanguage = 'en' | 'de';

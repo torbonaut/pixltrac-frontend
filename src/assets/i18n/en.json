@@ -5,5 +5,32 @@
     "DASHBOARD": "pixlTrac Dashboard",
     "SETTINGS": "Settings",
     "EDIT_CATEGORY": "Edit Category"
+  },
+  "SETTINGS": {
+    "TITLE": "Settings",
+    "COLOR_PALETTE": {
+      "TITLE": "Color Palette",
+      "QUOTE": "Just as one can compose colors, or forms, so one can compose motions.",
+      "CHOOSE": "Choose color palette"
+    },
+    "CATEGORIES": {
+      "TITLE": "Categories",
+      "QUOTE": "Not everyone needs to be slammed into a category and locked there.",
+      "EMPTY": "Keine Kategorien vorhanden bzw. konnten diese nicht geladen werden."
+    },
+    "EDIT_CATEGORY": {
+      "TITLE": "edit category",
+      "LABEL_TITLE": "Title",
+      "LABEL_DESCRIPTION": "Description",
+      "LABEL_ACTIVE": "active",
+      "BUTTON_DELETE": "delete category"
+    },
+    "LANGUAGE": {
+      "TITLE": "Language",
+      "QUOTE": "Use what language you will, you can never say anything but what you are.",
+      "CHOOSE": "Choose Language",
+      "ENGLISH": "English",
+      "GERMAN": "German"
+    }
   }
 }

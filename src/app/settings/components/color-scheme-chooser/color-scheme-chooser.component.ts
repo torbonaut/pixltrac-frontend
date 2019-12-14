@@ -33,8 +33,8 @@ export class ColorSchemeChooserComponent implements OnInit {
     this.store.dispatch(new ActionSettingsSetActiveColorPalette(selectedColorPalette));
   }
 
-  compareOptions(i1: IColorPalette, i2: IColorPalette) {
-    return i1 && i2 ? i1.id === i2.id : i1 === i2;
+  compareOptions(o1: IColorPalette, o2: IColorPalette): boolean {
+    return o1 && o2 ? o1.id === o2.id : o1 === o2;
   }
 
 }

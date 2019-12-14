@@ -2,6 +2,15 @@ span.icon-category {
   background-image: url(/assets/svg/liste.svg);
 }
 
+mat-card {
+  position: relative;
+  button {
+    position: absolute;
+    right: 15px;
+    top:-20px;
+  }
+}
+
 mat-expansion-panel {
   p {
     font-size: 12px;

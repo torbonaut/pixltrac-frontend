@@ -1,4 +1,4 @@
-import {ICategory, IColorPalette} from '../models/settings.model';
+import {ICategory, IColorPalette, TLanguage} from '../models/settings.model';
 
 export interface ISettingsStateModel {
   colorPalettesLoading: boolean;
@@ -7,6 +7,7 @@ export interface ISettingsStateModel {
   activeColorPalette: IColorPalette;
   categories: ICategory[];
   lastCategoryId: number;
+  language: TLanguage;
 }
 
 export const defaultSettingsState: ISettingsStateModel = {
@@ -15,5 +16,6 @@ export const defaultSettingsState: ISettingsStateModel = {
   colorPalettes: [],
   activeColorPalette: null,
   categories: [],
-  lastCategoryId: null
+  lastCategoryId: null,
+  language: 'en'
 };

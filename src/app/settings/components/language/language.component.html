@@ -1,19 +1,16 @@
 <mat-card>
   <mat-card-title>
     <span class="svg-icon icon-translation"></span>
-    <span>Sprache</span>
+    <span translate>SETTINGS.LANGUAGE.TITLE</span>
   </mat-card-title>
-  <mat-card-subtitle>Die ganze Kunst der Sprache besteht darin, verstanden zu werden.</mat-card-subtitle>
+  <mat-card-subtitle translate>SETTINGS.LANGUAGE.QUOTE</mat-card-subtitle>
   <mat-card-content>
     <mat-form-field>
-      <mat-label>
-        Sprache auswählen
-      </mat-label>
-      <mat-select>
-        <mat-option>Deutsch</mat-option>
-        <mat-option>Englisch</mat-option>
+      <mat-label translate>SETTINGS.LANGUAGE.CHOOSE</mat-label>
+      <mat-select [value]="language$ | async" (valueChange)="selectLanguage($event)">
+        <mat-option value="de">{{ "SETTINGS.LANGUAGE.GERMAN" | translate }}</mat-option>
+        <mat-option value="en">{{ "SETTINGS.LANGUAGE.ENGLISH" | translate }}</mat-option>
       </mat-select>
-
     </mat-form-field>
   </mat-card-content>
 </mat-card>

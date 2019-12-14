@@ -1,4 +1,4 @@
-import {ICategory, IColorPalette} from '../models/settings.model';
+import {ICategory, IColorPalette, TLanguage} from '../models/settings.model';
 
 export class ActionSettingsLoadColorPalettes {
   static readonly type = '[Settings] Load Color Palettes';
@@ -25,4 +25,9 @@ export class ActionSettingsNewCategory {
 export class ActionSettingsDeleteCategory {
   static readonly type = '[Settings] Delete Category';
   constructor(public categoryId: number) {}
+}
+
+export class ActionSettingsSetLanguage {
+  static readonly type = '[Settings] Set Language';
+  constructor(public language: TLanguage) {}
 }

@@ -1,16 +1,17 @@
 <ng-container *ngIf="routeId$ | async">
-  <h1>Kategorie bearbeiten</h1>
   <form [formGroup]="form">
     <mat-form-field appearance="fill">
-      <mat-label>Titel</mat-label>
+      <mat-label translate>SETTINGS.EDIT_CATEGORY.LABEL_TITLE</mat-label>
       <input matInput formControlName="title" />
     </mat-form-field>
     <mat-form-field appearance="fill">
-      <mat-label>Beschreibung</mat-label>
+      <mat-label translate>SETTINGS.EDIT_CATEGORY.LABEL_DESCRIPTION</mat-label>
       <textarea matInput formControlName="description"></textarea>
     </mat-form-field>
-    <mat-slide-toggle formControlName="activated" color="accent">aktiv</mat-slide-toggle>
+    <mat-slide-toggle formControlName="activated" color="accent">
+      {{ "SETTINGS.EDIT_CATEGORY.LABEL_ACTIVE" | translate }}
+    </mat-slide-toggle>
     <mat-divider></mat-divider>
-    <button mat-button>Kategorie löschen</button>
+    <button mat-button>{{ "SETTINGS.EDIT_CATEGORY.BUTTON_DELETE" | translate }}</button>
   </form>
 </ng-container>
