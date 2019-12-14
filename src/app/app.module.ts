@@ -14,6 +14,7 @@ import {environment} from '../environments/environment';
 import {SharedModule} from './shared/shared.module';
 import {DashboardModule} from './dashboard/dashboard.module';
 import {SettingsModule} from './settings/settings.module';
+import {EntriesModule} from './entries/entries.module';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -41,7 +42,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     NgxsReduxDevtoolsPluginModule.forRoot({ name: 'pixlTracState'} ),
     SharedModule,
     DashboardModule,
-    SettingsModule
+    SettingsModule,
+    EntriesModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

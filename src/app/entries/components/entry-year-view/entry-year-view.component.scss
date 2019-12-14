@@ -1,0 +1,22 @@
+table {
+  width: 100%;
+  font-size: 8px;
+  border-collapse: collapse;
+
+  tr {
+    th {
+
+    }
+
+    td {
+      padding: 0;
+      border: 1px solid #eee;
+
+      &.day-header {
+        text-align: right;
+        padding: 0 5px 0 0;
+        border: 0;
+      }
+    }
+  }
+}

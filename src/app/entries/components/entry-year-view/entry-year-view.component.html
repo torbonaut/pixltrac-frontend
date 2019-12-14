@@ -1,0 +1,21 @@
+<table cellpadding="0" cellspacing="0">
+  <tr>
+    <th></th>
+    <th>Jan</th>
+    <th>Feb</th>
+    <th>Mar</th>
+    <th>Apr</th>
+    <th>May</th>
+    <th>Jun</th>
+    <th>Jul</th>
+    <th>Aug</th>
+    <th>Sep</th>
+    <th>Oct</th>
+    <th>Nov</th>
+    <th>Dec</th>
+  </tr>
+  <tr *ngFor="let day of days">
+    <td class="day-header">{{ day }}</td>
+    <td class="day-content" *ngFor="let month of months"></td>
+  </tr>
+</table>
