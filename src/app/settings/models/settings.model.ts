@@ -15,7 +15,5 @@ export interface ICategory {
   title: string;
   description: string;
   activated: boolean;
-  iconUrl: string;
-  labels: string[];
   created: Date;
 }

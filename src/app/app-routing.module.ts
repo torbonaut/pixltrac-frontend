@@ -10,7 +10,8 @@ const routes: Routes = [
     component: ScreenDashboardComponent,
     data: {
       backLinkOrSettings: false,
-      title: 'ROUTES.DASHBOARD'
+      title: 'ROUTES.DASHBOARD',
+      state: 'dashboard'
     }
   },
   {
@@ -18,15 +19,17 @@ const routes: Routes = [
     component: ScreenSettingsComponent,
     data: {
       backLinkOrSettings: true,
-      title: 'ROUTES.SETTINGS'
+      title: 'ROUTES.SETTINGS',
+      state: 'settings'
     }
   },
   {
-    path: 'settings/screen-edit-category/:id',
+    path: 'settings/edit-category/:id',
     component: ScreenEditCategoryComponent,
     data: {
       backLinkOrSettings: true,
-      title: 'ROUTES.EDIT_CATEGORY'
+      title: 'ROUTES.EDIT_CATEGORY',
+      state: 'edit-category'
     }
   },
   {

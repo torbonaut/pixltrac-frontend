@@ -2,7 +2,7 @@
   "APP_TITLE": "pixlTrac",
   "ROUTES": {
     "BACK": "zurück",
-    "DASHBOARD": "Übersicht",
+    "DASHBOARD": "pixlTrac Übersicht",
     "SETTINGS": "Einstellungen",
     "EDIT_CATEGORY": "Kategorie bearbeiten"
   }

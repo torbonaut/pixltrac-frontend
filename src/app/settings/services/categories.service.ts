@@ -13,8 +13,6 @@ export class CategoriesService {
         title: 'Schlaf',
         description: 'Wie gut hast du heute geschlafen?',
         activated: true,
-        iconUrl: '',
-        labels: ['Sehr gut', 'Gut', 'Befriedigend', 'Nicht gut', 'Fast gar nicht'],
         created: null
       },
       {
@@ -22,8 +20,6 @@ export class CategoriesService {
         title: 'Stimmung',
         description: 'Wie hast du dich heute gefühlt?',
         activated: true,
-        iconUrl: '',
-        labels: ['Superduper', 'in Ordnung', 'Mies'],
         created: null
       }
     ];

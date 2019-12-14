@@ -6,6 +6,7 @@ export interface ISettingsStateModel {
   colorPalettes: IColorPalette[];
   activeColorPalette: IColorPalette;
   categories: ICategory[];
+  lastCategoryId: number;
 }
 
 export const defaultSettingsState: ISettingsStateModel = {
@@ -13,5 +14,6 @@ export const defaultSettingsState: ISettingsStateModel = {
   categoriesLoading: false,
   colorPalettes: [],
   activeColorPalette: null,
-  categories: []
+  categories: [],
+  lastCategoryId: null
 };

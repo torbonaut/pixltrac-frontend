@@ -1,0 +1,16 @@
+<ng-container *ngIf="routeId$ | async">
+  <h1>Kategorie bearbeiten</h1>
+  <form [formGroup]="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Titel</mat-label>
+      <input matInput formControlName="title" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Beschreibung</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+    <mat-slide-toggle formControlName="activated" color="accent">aktiv</mat-slide-toggle>
+    <mat-divider></mat-divider>
+    <button mat-button>Kategorie löschen</button>
+  </form>
+</ng-container>

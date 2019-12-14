@@ -20,7 +20,6 @@ export class ActionSettingsUpdateCategory {
 
 export class ActionSettingsNewCategory {
   static readonly type = '[Settings] New Category';
-  constructor(public newCategory: ICategory) {}
 }
 
 export class ActionSettingsDeleteCategory {

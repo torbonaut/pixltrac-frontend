@@ -1,6 +1,11 @@
 import {Action, createSelector, NgxsOnInit, Selector, State, StateContext, Store} from '@ngxs/store';
 import {defaultSettingsState, ISettingsStateModel} from './settings.state-model';
-import {ActionSettingsLoadCategories, ActionSettingsLoadColorPalettes, ActionSettingsSetActiveColorPalette} from './settings.actions';
+import {
+  ActionSettingsLoadCategories,
+  ActionSettingsLoadColorPalettes,
+  ActionSettingsNewCategory,
+  ActionSettingsSetActiveColorPalette, ActionSettingsUpdateCategory
+} from './settings.actions';
 import {ColorPalettesService} from '../services/color-palettes.service';
 import {catchError, tap} from 'rxjs/operators';
 import {ICategory, IColorPalette} from '../models/settings.model';
@@ -11,6 +16,12 @@ import {CategoriesService} from '../services/categories.service';
   defaults: defaultSettingsState
 })
 export class SettingsState implements NgxsOnInit {
+
+  static categoryById(id: number) {
+    return createSelector([SettingsState], (state: ISettingsStateModel) => {
+      return state.categories.find( (category: ICategory) => category.id === id);
+    });
+  }
 
   @Selector()
   static colorPalettes(state: ISettingsStateModel) {
@@ -37,11 +48,12 @@ export class SettingsState implements NgxsOnInit {
     return state.categories;
   }
 
-  static categoryById(id: number) {
-    return createSelector([SettingsState], (state: ISettingsStateModel) => {
-      return state.categories.find( (category: ICategory) => category.id === id);
-    });
+  @Selector()
+  static lastCategoryId(state: ISettingsStateModel) {
+    return state.lastCategoryId;
   }
+
+  sortFunction = (a: ICategory, b: ICategory) => a.title.localeCompare(b.title);
 
   constructor(
     private store: Store,
@@ -86,6 +98,7 @@ export class SettingsState implements NgxsOnInit {
     return this.categoriesService.getAllCategories().pipe(
       tap( (categories: ICategory[]) => {
         if (categories && categories.length) {
+          categories.sort( this.sortFunction);
           ctx.patchState({ categories});
         }
         ctx.patchState({ categoriesLoading: false});
@@ -95,5 +108,43 @@ export class SettingsState implements NgxsOnInit {
         return error;
       })
     );
+  }
+
+  @Action(ActionSettingsNewCategory)
+  newCategory(ctx: StateContext<ISettingsStateModel>, action: ActionSettingsNewCategory) {
+    const state = ctx.getState();
+
+    const highestNumberReducer = (previousValue: number, currentValue: number) =>
+      previousValue > currentValue ? previousValue : currentValue;
+
+    const latestId = state.categories
+      .map( (item: ICategory) => item.id)
+      .reduce( highestNumberReducer, 0);
+
+    const lastCategoryId = latestId + 1;
+
+    const category: ICategory = {
+      id: lastCategoryId,
+      title: 'neue Kategorie',
+      description: '...',
+      created: new Date(),
+      activated: false
+    };
+
+    const categories = [...state.categories, category].sort(this.sortFunction);
+
+    ctx.patchState({ categories, lastCategoryId});
+  }
+
+  @Action(ActionSettingsUpdateCategory)
+  updateCategory(ctx: StateContext<ISettingsStateModel>, action: ActionSettingsUpdateCategory) {
+    const state = ctx.getState();
+
+    const categoriesTmp = state.categories.filter( (item: ICategory) => item.id !== action.updatedCategory.id);
+
+    const categories = [...categoriesTmp, action.updatedCategory]
+      .sort(this.sortFunction);
+
+    ctx.patchState({ categories });
   }
 }
